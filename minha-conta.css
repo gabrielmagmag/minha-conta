@@ -32,14 +32,15 @@ nav{
 
 nav input{
 	flex-grow: 2;
-	border-radius: 10px;
-	padding: 0.6em;
+	border-radius: 100px;
+	padding: 0.6em 1.2em;
 	font-family: buscape, sans-serif;
 	font-size: 1.2em;
-	text-align: center;
+	border: none;
+	box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.15);
 }
-nav svg, nav a{
-	flex-grow: 1;
+nav a{
+//	flex-grow: 1;
 	text-align: center;
 	margin: auto;
 }
@@ -65,5 +66,11 @@ main
 {
 	max-width: 60ch;
 	margin: 4em auto auto;
+}
+
+nav svg
+{	
+	max-width: 8em;
+	padding: 0.66em;
 }
  
