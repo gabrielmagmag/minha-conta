@@ -3,7 +3,8 @@
 	 src: url('buscape.woff2') format('woff2');
 	 font-weight: 1 999;
 }
- body{
+
+body{
 	 font-family: buscape, sans-serif;
 	 font-weight: 380;
 	 font-stretch: 75%;
@@ -16,10 +17,32 @@
 
 	 background-color:#FFFFFF;
 	 color:#000000;
-	 font-feature-settings: "ss01";
-	 
+	 font-feature-settings: "ss01";	 
 }
 
+nav{
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+	background-color: #FFC500;
+	padding: 1em;
+}
+
+nav input{
+	flex-grow: 2;
+	border-radius: 10px;
+	padding: 0.6em;
+	font-family: buscape, sans-serif;
+	font-size: 1.2em;
+	text-align: center;
+}
+nav svg, nav a{
+	flex-grow: 1;
+	text-align: center;
+	margin: auto;
+}
 
 
 h1,h2,h3 {
@@ -36,5 +59,11 @@ margin-bottom: 0.5em;
 }
  span{
 	 text-transform:uppercase;
+}
+
+main
+{
+	max-width: 60ch;
+	margin: 4em auto auto;
 }
  
