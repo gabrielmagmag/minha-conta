@@ -28,6 +28,7 @@ nav{
 	flex-wrap: nowrap;
 	background-color: #FFC500;
 	padding: 1em;
+	gap: 10%;
 }
 
 nav input{
@@ -40,9 +41,9 @@ nav input{
 	box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.15);
 }
 nav a{
-//	flex-grow: 1;
+	flex-grow: 1;
 	text-align: center;
-	margin: auto;
+	margin: auto;	
 }
 
 
@@ -61,11 +62,11 @@ margin-bottom: 0.5em;
  span{
 	 text-transform:uppercase;
 }
-
 main
 {
 	max-width: 60ch;
 	margin: 4em auto auto;
+	padding: 2em;
 }
 
 nav svg
@@ -73,4 +74,9 @@ nav svg
 	max-width: 8em;
 	padding: 0.66em;
 }
+
+details{
+	font-size: 1.2em;
+ }
+ 
  
