@@ -116,7 +116,7 @@ details[open] summary{
  	background-color: rgba(0,0,0,0.1);
 } 
  .overlay-modal{
- 	background-color: white;
+ 	background-color: #e5e5e5;
  	padding: 2em;
  	height: 300px;
  	width: 200px;
