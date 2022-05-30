@@ -77,6 +77,46 @@ nav svg
 
 details{
 	font-size: 1.2em;
+}
+summary{
+	padding:1em;
+	border-radius:10px;
+}
+ 
+summary:hover{
+ 	background-color: rgba(0,0,0,0.1);	
+ padding:1em;
+ 	cursor:pointer;
  }
+ 
+ .overlay
+ {
+ 	position:fixed;
+ 	top:0;
+ 	bottom:0;
+ 	left:0;
+ 	right:0;
+ 	background-color: black;
+ 	opacity: 0;
+ 	pointer-events: none;	
+ 	transition: opacity 0.2s ease-out;
+ }
+ 
+ details[open] .overlay{
+ 	opacity: 0.15;
+	pointer-events: all;
+ }
+ 
+ .overlay-modal{
+ 	background-color: white;
+ 	padding: 2em;
+ 	height: 300px;
+ 	width: 200px;
+ 	position: absolute;
+ 	right: 2em;
+ 	top: 5em;
+
+ }
+ 
  
  
