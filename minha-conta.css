@@ -57,13 +57,14 @@ h1,h2,h3 {
 main
 {
 	margin: auto;
-	padding: 2em 2em 100vh 2em;
+	padding: 2em;
 	background-color: white;
+	column-width:34ch;
 }
 
-main p
-{
-	max-width: 50ch;
+main svg{
+	 height:20vh;
+	 margin:auto;
 }
 
 nav svg
@@ -132,4 +133,20 @@ details[open] summary:hover{
   	list-style: none;
   	padding: 0;
   }
+ 
+ 
+ 
+ 
+
+
+
+ol,p{
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+}
+
+
+ span{
+	 text-transform:uppercase;
+}
  
