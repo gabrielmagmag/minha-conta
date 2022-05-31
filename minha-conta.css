@@ -75,11 +75,13 @@ nav svg
 
 details{
 	font-size: 1.2em;
-	margin: auto;	
+	margin: auto;
+	
 }
 summary{
 	padding:1em;
 	border-radius:10px;
+
 }
  
 summary:hover{
@@ -104,8 +106,8 @@ details[open] .overlay{
 	 pointer-events: all;
 	display:block;
  }
- 
- details[open] summary{
+
+details[open] summary{
 	 background-color: rgba(0,0,0,0.1);
 } 
 
