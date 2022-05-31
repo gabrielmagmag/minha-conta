@@ -22,7 +22,8 @@ body{
 
 nav{	
 	display: grid;	
-	grid-template-columns: 1fr 1.6fr 1fr;	
+	grid-template-columns: 1fr 1.6fr 1fr;
+	padding: 0.66em 0;
 	background-color: #FFC500;
 }
 
@@ -120,8 +121,8 @@ details[open] summary:hover{
 	 height: 300px;
 	 width: 200px;
 	 position: absolute;
-	 right: 2em;
-	 top: 3em;
+	 right: 30px;
+	 top: 70px;
 	border-radius: 9px;
 	border:1px solid #ddd;
 	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
