@@ -20,17 +20,9 @@ body{
 	 font-feature-settings: "ss01";
 }
 
-nav{
-//	display: flex;
-//	flex-grow: 1;
-//	justify-content: space-between;
-//	align-items: center;
-//	flex-wrap: nowrap;
-	
+nav{	
 	display: grid;	
-	grid-template-columns: 1fr 1.5fr 1fr;
-	padding: .66em;
-	
+	grid-template-columns: 1fr 1.6fr 1fr;	
 	background-color: #FFC500;
 }
 
@@ -45,8 +37,8 @@ nav input{
 	width: 100%;
 	text-align: center;
 }
+
 nav a{
-	flex-grow: 1;
 	text-align: center;
 	margin: auto;	
 }
@@ -66,12 +58,11 @@ main
 	margin: auto;
 	padding: 2em 2em 100vh 2em;
 	background-color: white;
-	width: 100%;	
 }
 
 main p
 {
-	max-width: 60ch;
+	max-width: 50ch;
 }
 
 nav svg
@@ -92,47 +83,45 @@ summary{
 }
  
 summary:hover{
- 	background-color: rgba(0,0,0,0.1);	
- 	cursor:pointer;
+	 background-color: rgba(0,0,0,0.1);	
+	 cursor:pointer;
  }
  
  .overlay
  {
- 	position:fixed;
- 	top:0;
- 	bottom:0;
- 	left:0;
- 	right:0;
+	 position:fixed;
+	 top:0;
+	 bottom:0;
+	 left:0;
+	 right:0;
 	background-color: rgba(0,0,0,0);
- 	pointer-events: none;	
- 	transition: opacity 0.1s ease-out;
- 	display:none;
+	 pointer-events: none;	
+	 transition: opacity 0.1s ease-out;
+	 display:none;
  }
  
 details[open] .overlay{
- 	pointer-events: all;
+	 pointer-events: all;
 	display:block;
  }
  
-details[open] summary{
- 	background-color: rgba(0,0,0,0.1);
+ details[open] summary{
+	 background-color: rgba(0,0,0,0.1);
 } 
 
 details[open] summary:hover{
 	cursor: default;
 }
  .overlay-modal{
- 	background-color: #fcfcfc;
- 	padding: 2em;
- 	height: 300px;
- 	width: 200px;
- 	position: absolute;
- 	right: 2em;
- 	top: 3em;
+	 background-color: #fcfcfc;
+	 padding: 2em;
+	 height: 300px;
+	 width: 200px;
+	 position: absolute;
+	 right: 2em;
+	 top: 3em;
 	border-radius: 9px;
 	border:1px solid #ddd;
 	box-shadow: 0 4px 10px rgba(0,0,0,0.1);
  }
- 
- 
  
