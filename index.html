@@ -16,7 +16,6 @@
         font-weight: 380;
         font-stretch: 75%;
         font-size: 1em;
-        line-height: 1.33em;
         word-wrap: break-word;
         overflow-wrap: break-word;
         margin: auto;
@@ -24,12 +23,18 @@
         color: #000000;
         font-feature-settings: "ss01";
       }
+      ::selection
+      {
+        color: black;
+        background-color: #FFC500;
+      }
 
       nav {
         display: grid;
-        grid-template-columns: 1fr 1.6fr 1fr;
-        padding: 0.66em 0;
+        grid-template-columns: auto auto;
+        padding: 0.66em 1.66em;
         background-color: #FFC500;
+        justify-content: space-between;
       }
 
       nav input {
@@ -41,6 +46,7 @@
         height: 30px;
         margin: auto;
         width: 100%;
+        display: none;
       }
 
       nav a {
@@ -58,7 +64,17 @@
         margin-top: 0.5em;
         margin-bottom: 0.5em;
       }
-
+      h1{font-size: 1.814em;}
+      h2{font-size: 1.512em;}
+      h3{font-size: 1.26em;}
+      main p,
+      main li,
+      main ol{
+        font-size: 1.05em;
+        line-height: 1.2em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
       main {
         margin: auto;
         padding: 2em;
@@ -66,9 +82,10 @@
         column-width: 34ch;
       }
 
-      main svg {
+      main > svg {
         height: 20vh;
         margin: auto;
+        display: block;
       }
 
       nav svg {
@@ -122,7 +139,7 @@
         height: auto;
         min-width: 200px;
         position: absolute;
-        right: 30px;
+        right: 1em;
         top: 70px;
         border-radius: 9px;
         border: 1px solid #ddd;
@@ -134,10 +151,11 @@
         padding: 0;
       }
 
-      ol,
-      p {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+      
+      .spanUppercase{
+        text-transform: uppercase;
+       /* margin-top: 2em;
+        margin-bottom: 2em; */
       }
     </style>
   </head>
@@ -193,9 +211,7 @@
         <span>outubro de 2022</span>
       </p>
       <p>Nosso compromisso é respeitar sua privacidade e garantir o sigilo de todas as informações que você nos fornece através do site e do aplicativo do Buscapé. Por isso, com o objetivo de fornecer informações claras e precisas aos titulares acerca do tratamento de dados pessoais, apresentamos nossa Política de Privacidade.</p>
-      <p>
-        <span>A navegação e uso deste site significa que o usuário concorda com os termos e serviços oferecidos nesta Política de Privacidade.</span>
-      </p>
+      <p class="spanUppercase">A navegação e uso deste site significa que o usuário concorda com os termos e serviços oferecidos nesta Política de Privacidade.</p>
       <h2>Tratamento dos dados pessoais</h2>
       <h3>1. Coleta e Uso</h3>
       <p>1.1 Coletamos o mínimo necessário. Para seu cadastro, solicitamos informações como nome e e-mail. Utilizamos seu e-mail, apenas quando autorizado por você, para comunicar promoções de produtos e serviços.</p>
