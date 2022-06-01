@@ -1,257 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>Buscapé</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      @font-face {
-        font-family: 'buscape';
-        src: url('buscape.woff2') format('woff2');
-        font-weight: 1 999;
-      }
-
-      body {
-        font-family: buscape, sans-serif;
-        font-weight: 380;
-        font-stretch: 75%;
-        font-size: 1em;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        margin: auto;
-        background-color: #FFC500;
-        color: #000000;
-        font-feature-settings: "ss01";
-      }
-      ::selection
-      {
-        color: black;
-        background-color: #FFC500;
-      }
-
-      nav {
-        display: grid;
-        grid-template-columns: auto auto;
-        padding: 0.66em 1.66em;
-        background-color: #FFC500;
-        justify-content: space-between;
-      }
-
-      nav input {
-        border-radius: 100px;
-        font-family: sans-serif;
-        font-size: 1em;
-        border: none;
-        box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.15);
-        height: 30px;
-        margin: auto;
-        width: 100%;
-        display: none;
-      }
-
-      nav a {
-        text-align: center;
-        margin: auto;
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-weight: 500;
-        font-stretch: 75%;
-        letter-spacing: -0.015em;
-        line-height: 1.05em;
-        margin-top: 0.608em;
-        margin-bottom: 0.608em;
-      }
-      h1{font-size: 1.814em; font-weight: 500;}
-      h2{font-size: 1.512em; font-weight: 550;}
-      h3{font-size: 1.26em; font-weight: 533;}
-      main p,
-      main li,
-      main ol{
-        font-size: 1.05em;
-        line-height: 1.26em;
-        margin-top: 0.608em;
-        margin-bottom: 0.608em;
-      }
-      main {
-        margin: auto;
-        padding: 2.613em;
-        background-color: white;
-        column-width: 35ch;
-        column-gap: 2.177em;
-      }
-      
-      main > svg {
-        height: 20vh;
-        margin: auto;
-        display: block;
-      }
-
-      nav svg {
-        max-width: 8em;
-        height: auto;
-        margin: auto;
-        transform: translatey(9%);
-      }
-
-      details {
-        font-size: 1.2em;
-        margin: auto;
-      }
-
-      summary {
-        padding: 1em;
-        border-radius: 9px;
-        border: 1px solid black;
-      }
-
-      summary:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-      }
-
-      .overlay {
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0);
-        pointer-events: none;
-        transition: opacity 0.1s ease-out;
-        display: none;
-      }
-
-      details[open] .overlay {
-        display: block;
-        pointer-events: all;
-      }
-
-      details[open] summary {
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-
-      details[open] summary:hover {
-        cursor: default;
-      }
-
-      .overlay-modal {
-        background-color: #fcfcfc;
-        padding: 1em;
-        height: auto;
-        min-width: 200px;
-        position: absolute;
-        right: 1em;
-        top: 70px;
-        border-radius: 9px;
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .overlay-modal ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      
-      .spanUppercase{
-        text-transform: uppercase;
-        margin-bottom: 3.135em;
-      }
-      
-    </style>
-  </head>
-  <body>
-    <nav>
-      <a href="index.html">
-        <svg width="264" height="72" viewBox="0 0 264 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_122_11760)">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.60985 0.00110798L6.48637 0L6.37911 0.000847544C2.84644 0.0567138 0 2.86732 0 6.3259V35.9991L0.00247301 36.2968C0.165483 46.1018 8.36642 54.0014 18.4589 54.0014C28.6478 54.0014 36.9086 45.9504 36.9179 36.0154C36.9086 26.1092 29.9814 17.9968 20.1074 17.9968C15.5899 17.9968 11.9781 19.7418 9.57212 22.6013L12.832 7.64094L12.8563 7.52411C13.6207 3.67118 10.6335 0.0733902 6.60985 0.00110798ZM165.071 17.9985C175.163 17.9985 183.364 25.8981 183.527 35.7031L183.529 36.0008V53.2823C183.529 53.6694 183.218 53.9835 182.827 54.0022L182.79 54.003H175.037C174.64 54.003 174.318 53.699 174.299 53.3182L174.298 53.2823V48.9633L174.194 49.1132L174.122 49.2037C171.72 52.1795 168.041 54.0012 163.422 54.0012C153.548 54.0012 146.621 45.8888 146.612 35.9845C146.621 26.0495 154.882 17.9985 165.071 17.9985ZM206.276 17.9985C216.465 17.9985 224.725 26.0495 224.735 35.9863C224.727 45.8906 217.8 54.003 207.924 54.003C203.452 54.003 199.867 52.2928 197.461 49.484L197.389 49.3986L200.649 64.3589C201.506 68.2932 198.428 71.9999 194.303 71.9999C190.757 71.9999 187.875 69.2239 187.818 65.7786L187.817 65.674V36.0008C187.817 26.0585 196.081 17.9985 206.276 17.9985ZM129.376 17.9951C135.931 17.9951 141.684 21.3278 144.957 26.3459C145.178 26.6837 145.08 27.1282 144.741 27.3445L144.707 27.3647L137.978 31.1545C137.645 31.3423 137.219 31.2466 137.002 30.9359C135.344 28.5569 132.549 26.9962 129.375 26.9962C124.081 26.9962 119.832 31.3423 120.164 36.57C120.442 40.9305 123.987 44.527 128.445 44.9533C131.99 45.2929 135.183 43.669 136.998 41.066C137.21 40.7639 137.615 40.661 137.944 40.8258L137.978 40.8438L144.705 44.63C145.072 44.8359 145.183 45.2983 144.959 45.6488C141.503 50.9487 135.279 54.3699 128.267 53.9689C118.862 53.4306 111.297 45.8944 110.932 36.7127C110.525 26.4453 118.936 17.9951 129.376 17.9951ZM49.836 18.6799C49.8168 18.2991 49.4948 17.9951 49.0978 17.9951H41.3446L41.3077 17.996C40.9173 18.0146 40.6055 18.3287 40.6055 18.7158V37.2582L40.6079 37.5379C40.7626 46.7492 48.5457 54.1516 58.0661 53.9978C67.479 53.8443 74.9396 46.1636 74.9396 36.9836V18.7158L74.9391 18.6799C74.9232 18.2991 74.5994 17.9951 74.2043 17.9951H66.451L66.4142 17.996C66.0238 18.0146 65.712 18.3287 65.712 18.7158V37.0739L65.711 37.1997C65.645 41.3431 62.3221 44.8482 58.0643 44.9949C53.5486 45.152 49.8369 41.6278 49.8369 37.2582V18.7158L49.836 18.6799ZM92.7349 17.9951C99.8195 17.9951 104.252 21.0749 106.508 24.731C106.716 25.067 106.604 25.503 106.267 25.7106L106.234 25.73L100.118 29.0808C99.764 29.274 99.3232 29.1476 99.1157 28.808C97.8618 26.7614 95.5206 25.7896 92.9461 25.7896C90.4715 25.7896 88.6323 26.9619 88.6323 28.7556C88.6323 30.7974 91.2658 31.4794 94.584 32.178L95.1278 32.2917L95.6817 32.4069L96.2439 32.5251C101.619 33.6654 107.868 35.3749 107.867 42.6863C107.867 49.583 101.009 53.9978 93.0165 53.9978C86.0504 53.9978 81.0883 51.6008 78.1322 46.9277C77.9169 46.5882 78.0197 46.1453 78.3615 45.934L78.3953 45.9143L84.5297 42.5527C84.8742 42.3648 85.3076 42.475 85.5169 42.8019C87.0117 45.134 89.2528 46.1365 92.5219 46.1365C95.7762 46.1365 97.8266 44.8937 97.8266 42.8941C97.8266 40.9074 95.3335 40.2528 92.1423 39.6141L91.331 39.4539L90.7771 39.3453C85.2861 38.264 78.5897 36.7341 78.5897 28.9615C78.5897 22.8235 84.1074 17.9951 92.7349 17.9951ZM263.997 35.5651C263.853 25.9123 256.594 17.9932 245.961 17.9932C235.226 17.9932 227.922 26.0731 227.922 35.8582C227.922 46.6747 236.067 53.9977 246.872 53.9977C253.586 53.9977 258.96 51.1057 262.142 45.9847C262.358 45.636 262.246 45.1826 261.884 44.9785L255.704 41.4977L255.669 41.4792C255.341 41.3165 254.939 41.4144 254.729 41.7144C252.997 44.1982 250.143 45.5818 246.802 45.5818C241.821 45.5818 238.241 42.5724 237.539 38.0529H263.26L263.297 38.052C263.688 38.0334 264 37.7193 264 37.3322V35.8582L263.997 35.5651ZM206.279 26.9995C201.181 26.9995 197.049 31.0295 197.049 36.0006C197.049 40.9717 201.181 45.0017 206.279 45.0017C211.376 45.0017 215.508 40.9717 215.508 36.0006C215.508 31.0295 211.376 26.9995 206.279 26.9995ZM155.84 36.0007C155.84 31.0296 159.972 26.9996 165.07 26.9996C170.167 26.9996 174.299 31.0296 174.299 36.0007C174.299 40.9718 170.167 45.0018 165.07 45.0018C159.972 45.0018 155.84 40.9718 155.84 36.0007ZM18.4599 26.996C13.3627 26.996 9.23048 31.0261 9.23048 35.9972C9.23048 40.9683 13.3627 44.9983 18.4599 44.9983C23.5553 44.9983 27.6894 40.9683 27.6894 35.9972C27.6894 31.0261 23.5572 26.996 18.4599 26.996ZM237.986 32.5397C238.743 29.0863 241.67 26.3404 246.082 26.3404C250.39 26.3404 253.405 29.0734 253.839 32.6446H237.964L237.986 32.5397Z" fill="black" />
-            <path d="M257.405 8.99924V8.99924C257.405 11.4776 255.345 13.4863 252.804 13.4863H237.511C235.857 13.4863 234.518 12.1784 234.518 10.5672V10.5672C234.518 9.18891 235.507 7.99852 236.888 7.7113L251.849 4.60977C254.71 4.01548 257.405 6.14518 257.405 8.99924Z" fill="#FF511C" />
-          </g>
-          <defs>
-            <clipPath id="clip0_122_11760">
-              <rect width="264" height="72" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-      </a>
-      <input type="text" placeholder="Digite sua busca…">
-      <details>
-        <summary>
-          <span>Gabriel</span>
-          <span class="overlay"></span>
-        </summary>
-        <div class="overlay-modal">
-          <ul>
-            <li>gabriel.rodrigues@mosaico.com.br</li>
-            <li>CEP: 27258-060</li>
-            <li>Saldo da Carteira: R$ 30,00</li>
-            <li>Meus Pedidos</li>
-            <li>Alertas de Preço</li>
-            <li>Produtos Salvos</li>
-            <li>Produtos Vistos</li>
-            <li>Sair da conta</li>
-          </ul>
-        </div>
-      </details>
-    </nav>
-    <main>
-      <svg width="44px" height="44px" viewBox="0 0 44 44">
-        <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="Política-de-Privacidade" transform="translate(-158.000000, -103.000000)">
-            <g id="Frame-19796-bg" transform="translate(158.000000, 103.000000)">
-              <path d="M0,0 L44,0 L44,44 L0,44 L0,0 Z" id="Frame-19796"></path>
-              <path d="M16.2841261,19.2047738 L18.4250284,9.14076203 C18.9883588,6.49325298 16.96765,4 14.2589749,4 C11.906685,4 10,5.9054519 10,8.25591618 L10,28.217476 C10,34.9059784 15.4263582,40.328125 22.1196853,40.328125 C28.8098042,40.328125 34.2336944,34.9116498 34.2394943,28.2282033 C34.2336944,21.5651021 29.6854662,16.1073201 23.2016756,16.1073201 C20.2359541,16.1073201 17.863549,17.2813193 16.2841261,19.2047738 Z M16.0600278,28.217476 C16.0600278,24.8732866 18.7728985,22.1622744 22.1200556,22.1622744 C25.4667192,22.1622744 28.1799609,24.8732866 28.1799609,28.217476 C28.1799609,31.5617886 25.4667192,34.2727997 22.1200556,34.2727997 C18.7728985,34.2727997 16.0600278,31.5617886 16.0600278,28.217476 Z" id="Vector" fill="#000000"></path>
-              <path d="M24.0855484,13.0731258 C22.9997333,13.0731258 22.1196289,12.1937052 22.1196289,11.1088561 C22.1196289,10.1813458 22.7687238,9.38034795 23.6765931,9.18749684 L33.4989068,7.10127706 C35.3783208,6.70213446 37.1484013,8.13433741 37.1484013,10.054217 C37.1484013,11.721442 35.7957912,13.0731258 34.1272715,13.0731258 L24.0855484,13.0731258 Z" id="Vector2" fill-opacity="0.550000012" fill="#000000" fill-rule="nonzero"></path>
+   <head>
+      <title>Buscapé</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+         @font-face {
+         font-family: 'buscape';
+         src: url('buscape.woff2') format('woff2');
+         font-weight: 1 999;
+         }
+         body {
+         font-family: buscape, sans-serif;
+         font-weight: 380;
+         font-stretch: 75%;
+         word-wrap: break-word;
+         overflow-wrap: break-word;
+         margin: auto;
+         background-color: #FFC500;
+         color: #000000;
+         font-feature-settings: "ss01";
+         padding: 0;
+         }
+         ::selection
+         {
+         color: black;
+         background-color: #FFC500;
+         }
+         nav {
+         display: grid;
+         grid-template-columns: auto auto;
+         padding: 0.66em 1.66em;
+         background-color: #FFC500;
+         justify-content: space-between;
+         }
+         nav input {
+         border-radius: 100px;
+         font-family: sans-serif;
+         font-size: 1em;
+         border: none;
+         box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.15);
+         height: 30px;
+         margin: auto;
+         width: 100%;
+         display: none;
+         }
+         nav a {
+         text-align: center;
+         margin: auto;
+         }
+         h1,
+         h2,
+         h3 {
+         font-weight: 500;
+         font-stretch: 75%;
+         letter-spacing: -0.015em;
+         line-height: 1.05em;
+         margin-top: 0.608em;
+         margin-bottom: 0.608em;
+         }
+         h1{font-size: 2.613em; font-weight: 500;}
+         h2{font-size: 1.814em; font-weight: 550;}
+         h3{font-size: 1.512em; font-weight: 533;}
+         main p,
+         main li{
+         font-size: 1.26em;
+         line-height: 1.26em;
+         margin-top: 0.608em;
+         margin-bottom: 0.608em;
+         }
+         main {
+         margin: auto;
+         padding: 1.814em;
+         background-color: white;
+         column-width: 35ch;
+         column-gap: 2.177em;
+         }
+         main > svg {
+         height: 20vh;
+         margin: auto;
+         display: block;
+         }
+         nav svg {
+         max-width: 8em;
+         height: auto;
+         margin: auto;
+         transform: translatey(9%);
+         }
+         details {
+         font-size: 1.2em;
+         margin: auto;
+         }
+         summary {
+         padding: 1em;
+         border-radius: 9px;
+         border: 1px solid black;
+         }
+         summary:hover {
+         background-color: rgba(0, 0, 0, 0.1);
+         cursor: pointer;
+         }
+         .overlay {
+         position: fixed;
+         inset: 0;
+         background-color: rgba(0, 0, 0, 0);
+         pointer-events: none;
+         transition: opacity 0.1s ease-out;
+         display: none;
+         }
+         details[open] .overlay {
+         display: block;
+         pointer-events: all;
+         }
+         details[open] summary {
+         background-color: rgba(0, 0, 0, 0.1);
+         }
+         details[open] summary:hover {
+         cursor: default;
+         }
+         .overlay-modal {
+         background-color: #fcfcfc;
+         padding: 1em;
+         height: auto;
+         min-width: 200px;
+         position: absolute;
+         right: 1em;
+         top: 70px;
+         border-radius: 9px;
+         border: 1px solid #ddd;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         }
+         .overlay-modal ul {
+         list-style: none;
+         padding: 0;
+         }
+         .spanUppercase{
+         text-transform: uppercase;
+         margin-bottom: 3.135em;
+         }
+      </style>
+   </head>
+   <body>
+      <nav>
+         <a href="index.html">
+            <svg width="264" height="72" viewBox="0 0 264 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g clip-path="url(#clip0_122_11760)">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.60985 0.00110798L6.48637 0L6.37911 0.000847544C2.84644 0.0567138 0 2.86732 0 6.3259V35.9991L0.00247301 36.2968C0.165483 46.1018 8.36642 54.0014 18.4589 54.0014C28.6478 54.0014 36.9086 45.9504 36.9179 36.0154C36.9086 26.1092 29.9814 17.9968 20.1074 17.9968C15.5899 17.9968 11.9781 19.7418 9.57212 22.6013L12.832 7.64094L12.8563 7.52411C13.6207 3.67118 10.6335 0.0733902 6.60985 0.00110798ZM165.071 17.9985C175.163 17.9985 183.364 25.8981 183.527 35.7031L183.529 36.0008V53.2823C183.529 53.6694 183.218 53.9835 182.827 54.0022L182.79 54.003H175.037C174.64 54.003 174.318 53.699 174.299 53.3182L174.298 53.2823V48.9633L174.194 49.1132L174.122 49.2037C171.72 52.1795 168.041 54.0012 163.422 54.0012C153.548 54.0012 146.621 45.8888 146.612 35.9845C146.621 26.0495 154.882 17.9985 165.071 17.9985ZM206.276 17.9985C216.465 17.9985 224.725 26.0495 224.735 35.9863C224.727 45.8906 217.8 54.003 207.924 54.003C203.452 54.003 199.867 52.2928 197.461 49.484L197.389 49.3986L200.649 64.3589C201.506 68.2932 198.428 71.9999 194.303 71.9999C190.757 71.9999 187.875 69.2239 187.818 65.7786L187.817 65.674V36.0008C187.817 26.0585 196.081 17.9985 206.276 17.9985ZM129.376 17.9951C135.931 17.9951 141.684 21.3278 144.957 26.3459C145.178 26.6837 145.08 27.1282 144.741 27.3445L144.707 27.3647L137.978 31.1545C137.645 31.3423 137.219 31.2466 137.002 30.9359C135.344 28.5569 132.549 26.9962 129.375 26.9962C124.081 26.9962 119.832 31.3423 120.164 36.57C120.442 40.9305 123.987 44.527 128.445 44.9533C131.99 45.2929 135.183 43.669 136.998 41.066C137.21 40.7639 137.615 40.661 137.944 40.8258L137.978 40.8438L144.705 44.63C145.072 44.8359 145.183 45.2983 144.959 45.6488C141.503 50.9487 135.279 54.3699 128.267 53.9689C118.862 53.4306 111.297 45.8944 110.932 36.7127C110.525 26.4453 118.936 17.9951 129.376 17.9951ZM49.836 18.6799C49.8168 18.2991 49.4948 17.9951 49.0978 17.9951H41.3446L41.3077 17.996C40.9173 18.0146 40.6055 18.3287 40.6055 18.7158V37.2582L40.6079 37.5379C40.7626 46.7492 48.5457 54.1516 58.0661 53.9978C67.479 53.8443 74.9396 46.1636 74.9396 36.9836V18.7158L74.9391 18.6799C74.9232 18.2991 74.5994 17.9951 74.2043 17.9951H66.451L66.4142 17.996C66.0238 18.0146 65.712 18.3287 65.712 18.7158V37.0739L65.711 37.1997C65.645 41.3431 62.3221 44.8482 58.0643 44.9949C53.5486 45.152 49.8369 41.6278 49.8369 37.2582V18.7158L49.836 18.6799ZM92.7349 17.9951C99.8195 17.9951 104.252 21.0749 106.508 24.731C106.716 25.067 106.604 25.503 106.267 25.7106L106.234 25.73L100.118 29.0808C99.764 29.274 99.3232 29.1476 99.1157 28.808C97.8618 26.7614 95.5206 25.7896 92.9461 25.7896C90.4715 25.7896 88.6323 26.9619 88.6323 28.7556C88.6323 30.7974 91.2658 31.4794 94.584 32.178L95.1278 32.2917L95.6817 32.4069L96.2439 32.5251C101.619 33.6654 107.868 35.3749 107.867 42.6863C107.867 49.583 101.009 53.9978 93.0165 53.9978C86.0504 53.9978 81.0883 51.6008 78.1322 46.9277C77.9169 46.5882 78.0197 46.1453 78.3615 45.934L78.3953 45.9143L84.5297 42.5527C84.8742 42.3648 85.3076 42.475 85.5169 42.8019C87.0117 45.134 89.2528 46.1365 92.5219 46.1365C95.7762 46.1365 97.8266 44.8937 97.8266 42.8941C97.8266 40.9074 95.3335 40.2528 92.1423 39.6141L91.331 39.4539L90.7771 39.3453C85.2861 38.264 78.5897 36.7341 78.5897 28.9615C78.5897 22.8235 84.1074 17.9951 92.7349 17.9951ZM263.997 35.5651C263.853 25.9123 256.594 17.9932 245.961 17.9932C235.226 17.9932 227.922 26.0731 227.922 35.8582C227.922 46.6747 236.067 53.9977 246.872 53.9977C253.586 53.9977 258.96 51.1057 262.142 45.9847C262.358 45.636 262.246 45.1826 261.884 44.9785L255.704 41.4977L255.669 41.4792C255.341 41.3165 254.939 41.4144 254.729 41.7144C252.997 44.1982 250.143 45.5818 246.802 45.5818C241.821 45.5818 238.241 42.5724 237.539 38.0529H263.26L263.297 38.052C263.688 38.0334 264 37.7193 264 37.3322V35.8582L263.997 35.5651ZM206.279 26.9995C201.181 26.9995 197.049 31.0295 197.049 36.0006C197.049 40.9717 201.181 45.0017 206.279 45.0017C211.376 45.0017 215.508 40.9717 215.508 36.0006C215.508 31.0295 211.376 26.9995 206.279 26.9995ZM155.84 36.0007C155.84 31.0296 159.972 26.9996 165.07 26.9996C170.167 26.9996 174.299 31.0296 174.299 36.0007C174.299 40.9718 170.167 45.0018 165.07 45.0018C159.972 45.0018 155.84 40.9718 155.84 36.0007ZM18.4599 26.996C13.3627 26.996 9.23048 31.0261 9.23048 35.9972C9.23048 40.9683 13.3627 44.9983 18.4599 44.9983C23.5553 44.9983 27.6894 40.9683 27.6894 35.9972C27.6894 31.0261 23.5572 26.996 18.4599 26.996ZM237.986 32.5397C238.743 29.0863 241.67 26.3404 246.082 26.3404C250.39 26.3404 253.405 29.0734 253.839 32.6446H237.964L237.986 32.5397Z" fill="black" />
+                  <path d="M257.405 8.99924V8.99924C257.405 11.4776 255.345 13.4863 252.804 13.4863H237.511C235.857 13.4863 234.518 12.1784 234.518 10.5672V10.5672C234.518 9.18891 235.507 7.99852 236.888 7.7113L251.849 4.60977C254.71 4.01548 257.405 6.14518 257.405 8.99924Z" fill="#FF511C" />
+               </g>
+               <defs>
+                  <clipPath id="clip0_122_11760">
+                     <rect width="264" height="72" fill="white" />
+                  </clipPath>
+               </defs>
+            </svg>
+         </a>
+         <input type="text" placeholder="Digite sua busca…">
+         <details>
+            <summary>
+               <span>Gabriel</span>
+               <span class="overlay"></span>
+            </summary>
+            <div class="overlay-modal">
+               <ul>
+                  <li>gabriel.rodrigues@mosaico.com.br</li>
+                  <li>CEP: 27258-060</li>
+                  <li>Saldo da Carteira: R$ 30,00</li>
+                  <li>Meus Pedidos</li>
+                  <li>Alertas de Preço</li>
+                  <li>Produtos Salvos</li>
+                  <li>Produtos Vistos</li>
+                  <li>Sair da conta</li>
+               </ul>
+            </div>
+         </details>
+      </nav>
+      <main>
+         <svg width="44px" height="44px" viewBox="0 0 44 44">
+            <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+               <g id="Política-de-Privacidade" transform="translate(-158.000000, -103.000000)">
+                  <g id="Frame-19796-bg" transform="translate(158.000000, 103.000000)">
+                     <path d="M0,0 L44,0 L44,44 L0,44 L0,0 Z" id="Frame-19796"></path>
+                     <path d="M16.2841261,19.2047738 L18.4250284,9.14076203 C18.9883588,6.49325298 16.96765,4 14.2589749,4 C11.906685,4 10,5.9054519 10,8.25591618 L10,28.217476 C10,34.9059784 15.4263582,40.328125 22.1196853,40.328125 C28.8098042,40.328125 34.2336944,34.9116498 34.2394943,28.2282033 C34.2336944,21.5651021 29.6854662,16.1073201 23.2016756,16.1073201 C20.2359541,16.1073201 17.863549,17.2813193 16.2841261,19.2047738 Z M16.0600278,28.217476 C16.0600278,24.8732866 18.7728985,22.1622744 22.1200556,22.1622744 C25.4667192,22.1622744 28.1799609,24.8732866 28.1799609,28.217476 C28.1799609,31.5617886 25.4667192,34.2727997 22.1200556,34.2727997 C18.7728985,34.2727997 16.0600278,31.5617886 16.0600278,28.217476 Z" id="Vector" fill="#000000"></path>
+                     <path d="M24.0855484,13.0731258 C22.9997333,13.0731258 22.1196289,12.1937052 22.1196289,11.1088561 C22.1196289,10.1813458 22.7687238,9.38034795 23.6765931,9.18749684 L33.4989068,7.10127706 C35.3783208,6.70213446 37.1484013,8.13433741 37.1484013,10.054217 C37.1484013,11.721442 35.7957912,13.0731258 34.1272715,13.0731258 L24.0855484,13.0731258 Z" id="Vector2" fill-opacity="0.550000012" fill="#000000" fill-rule="nonzero"></path>
+                  </g>
+               </g>
             </g>
-          </g>
-        </g>
-      </svg>
-      <h1>Política de Privacidade</h1>
-<p>
-        <span>9 de outubro de 2020</span>
-      </p>      <p>Nosso compromisso é respeitar sua privacidade e garantir o sigilo de todas as informações que você nos fornece através do site e do aplicativo do Buscapé. Por isso, com o objetivo de fornecer informações claras e precisas aos titulares acerca do tratamento de dados pessoais, apresentamos nossa Política de Privacidade.</p>
-      <p class="spanUppercase">A navegação e uso do Buscapé significa que o usuário concorda com os termos e serviços oferecidos nesta Política de Privacidade.</p>
-      <h2>Tratamento dos dados pessoais</h2>
-      <h3>1. Coleta e Uso</h3>
-      <p>1.1 Coletamos o mínimo necessário. Para seu cadastro, solicitamos informações como nome e e-mail. Utilizamos seu e-mail, apenas quando autorizado por você, para comunicar promoções de produtos e serviços.</p>
-      <p>1.2 O Buscapé permite ao Titular dos dados pessoais a consulta facilitada de forma gratuita através de seu usuário e senha cadastrados em nosso site.</p>
-      <p>1.3 Todos os dados cadastrados em nosso site são utilizados apenas para melhorar sua experiência de navegação e mantê-lo atualizado sobre nossas promoções e vantagens oferecidas pelo site e todos os produtos oferecidos pelo Buscapé e suas empresas parceiras.</p>
-      <h3>2. Cookies</h3>
-      <p>2.1 No Buscapé, o uso de cookies é feito apenas para reconhecer um visitante constante e melhorar a experiência de navegação e usabilidade. Os cookies são pequenos arquivos de dados transferidos de um site da web para o disco do seu computador.</p>
-      <h3>3. Envio de e-mails</h3>
-      <p>3.1 Após o seu cadastro, um e-mail solicitando a confirmação da sua inscrição é enviado, e nunca envia e-mails com anexos executáveis (extensão exe, com, scr, bat) e links para download.</p>
-      <p>3.2 Nossos e-mails com promoções têm como remetente o buscape@envios.buscape.com.br e são enviados uma vez por dia, de segunda à sábado. Nosso link para atendimento e dúvidas é Atendimento Buscapé.</p>
-      <p>3.3 Os links de nossos e-mails levam diretamente para o site do Buscapé ou para empresas parceiras.</p>
-      <p>3.4 Nunca forneça a senha de seu cadastro a terceiros e, no caso de uso não autorizado, acesse imediatamente o Buscapé e altere sua senha em "esqueci minha senha".</p>
-      <h3>4. Compartilhamento de Dados Pessoais</h3>
-      <p>4.1 O Buscapé pode compartilhar seus dados pessoais com empresas parceiras de negócio com o objetivo de fornecer a você as melhores ofertas de produtos e serviços, desenvolver e aprimorar sua experiência no Buscapé, inclusive para oferecer novos produtos e serviços ou em circunstâncias específicas como processos judiciais, investigações, ou advindas de lei, incluindo requisições de autoridades e órgãos governamentais.</p>
-      <p>4.2 O Buscapé não vende, troca ou aluga informações pessoais dos seus usuários. Nós podemos utilizar informações genéricas sobre o perfil dos nossos visitantes, sem expor nenhuma informação pessoal, resguardando assim, a identidade dos nossos usuários com os nossos parceiros comerciais.</p>
-      <h3>5. Segurança da Informação</h3>
-      <p>5.1 Tomamos medidas de segurança técnicas e organizacionais adequadas para protegermos seus dados pessoais contra acesso, alteração, divulgação ou ainda destruição não autorizada dos dados. Essas medidas incluem análises internas de nossas práticas de coleta, armazenamento e processamento de dados e medidas de segurança, incluindo criptografia e medidas de segurança física apropriadas para nos proteger contra o acesso não autorizado a sistemas em que armazenamos os dados pessoais.</p>
-      <p>5.2 Nosso site utiliza uma tecnologia avançada de segurança. Todo o tráfego de dados é feito com as informações criptografadas, que é um método padrão usado na Internet para proteger as comunicações entre os usuários da Web e os sites, fornecendo uma navegação segura.</p>
-      <p>5.3 Limitamos o acesso às informações pessoais aos funcionários, contratantes e agentes do Buscapé que precisam ter conhecimento dessas informações para processá-las em nosso nome. Essas pessoas estão comprometidas com obrigações de confidencialidade e podem ser submetidas a punições, incluindo rescisão de contrato e processo criminal, caso não cumpram essas obrigações. O Buscapé não cadastra nenhum usuário sem sua devida permissão. </p>
-      <h3>6. Retenção e Término de Dados Pessoais</h3>
-      <p>6.1 O Buscapé armazena seus dados pessoais pelo tempo exigido por lei ou pelo tempo que for necessário para preservar o legítimo interesse do Buscapé. Dessa forma, trataremos seus dados, por exemplo, durante os prazos prescricionais aplicáveis ou enquanto necessário para cumprimento de uma obrigação legal ou regulatória.</p>
-      <p>6.2 O término do tratamento de dados pessoais poderá ocorrer quando o Titular exercer seu direito de solicitar o fim do tratamento e a exclusão de seus dados pessoais ou quando houver determinação legal neste sentido.</p>
-      <h3>7. Direitos dos Titulares dos Dados Pessoais</h3>
-      <p>7.1 A lei de proteção de dados prevê aos Titulares direitos em relação aos seus dados pessoais, quais sejam:</p>
-      <ol type="a">
-        <li>Solicitar o acesso aos dados pessoais e a confirmação da existência de tratamento de dados pessoais;</li>
-        <li>Solicitar a correção de dados incompletos, inexatos ou desatualizados;</li>
-        <li>Solicitar a portabilidade dos dados pessoais a outro fornecedor de serviço ou produto;</li>
-        <li>Solicitar a anonimização ou eliminação dos dados pessoais, em circunstâncias específicas;</li>
-        <li>Se opor as atividades de tratamento de seus dados pessoais e revogar o consentimento, quando o Buscapé tratar seus dados pessoais com base no consentimento.</li>
-      </ol>
-      <p>7.2 O consentimento pode ser revogado a qualquer momento pelo Titular dos dados para:</p>
-      <ol type="i">
-        <li>Deixar de receber alertas: em "Sua conta" desmarcando a opção "ALERTAS DE PREÇO".</li>
-        <li>Deixar de receber novidades e promoções: em "Sua conta" desmarcando a opção "NOVIDADES E PROMOÇÕES".</li>
-        <li>Deixar de receber e-mails: clicando na seguinte frase: "Para não receber mais nossos e-mails, acesse o link." que se localiza no início e no rodapé de todos os e-mails enviados. Se tiver algum problema ao se descadastrar, entre em contato através do link do atendimento.</li>
-      </ol>
-      <h3>8. Disposições Gerais</h3>
-      <p>8.1 Esta Política de Privacidade pode ser alterada periodicamente. Publicaremos todas as alterações da Política de Privacidade no site e no aplicativo do Buscapé. Se as alterações forem significativas, colocaremos um aviso com mais destaque, incluindo, para alguns serviços, notificação por e-mail das alterações da Política de Privacidade. </p>
-      <p>8.2 Se você tiver qualquer dúvida em relação a esta Política de Privacidade ou a respeito da forma como o Buscapé trata seus dados pessoais, entre em contato pelo e-mail <a href="mailto:dpo@buscape.com.br">dpo@buscape.com.br</a></p>
-    </main>
-  </body>
+         </svg>
+         <h1>Política de Privacidade</h1>
+         <p>
+            <span>9 de outubro de 2020</span>
+         </p>
+         <p>Nosso compromisso é respeitar sua privacidade e garantir o sigilo de todas as informações que você nos fornece através do site e do aplicativo do Buscapé. Por isso, com o objetivo de fornecer informações claras e precisas aos titulares acerca do tratamento de dados pessoais, apresentamos nossa Política de Privacidade.</p>
+         <p class="spanUppercase">A navegação e uso do Buscapé significa que o usuário concorda com os termos e serviços oferecidos nesta Política de Privacidade.</p>
+         <h2>Tratamento dos dados pessoais</h2>
+         <h3>1. Coleta e Uso</h3>
+         <p>1.1 Coletamos o mínimo necessário. Para seu cadastro, solicitamos informações como nome e e-mail. Utilizamos seu e-mail, apenas quando autorizado por você, para comunicar promoções de produtos e serviços.</p>
+         <p>1.2 O Buscapé permite ao Titular dos dados pessoais a consulta facilitada de forma gratuita através de seu usuário e senha cadastrados em nosso site.</p>
+         <p>1.3 Todos os dados cadastrados em nosso site são utilizados apenas para melhorar sua experiência de navegação e mantê-lo atualizado sobre nossas promoções e vantagens oferecidas pelo site e todos os produtos oferecidos pelo Buscapé e suas empresas parceiras.</p>
+         <h3>2. Cookies</h3>
+         <p>2.1 No Buscapé, o uso de cookies é feito apenas para reconhecer um visitante constante e melhorar a experiência de navegação e usabilidade. Os cookies são pequenos arquivos de dados transferidos de um site da web para o disco do seu computador.</p>
+         <h3>3. Envio de e-mails</h3>
+         <p>3.1 Após o seu cadastro, um e-mail solicitando a confirmação da sua inscrição é enviado, e nunca envia e-mails com anexos executáveis (extensão exe, com, scr, bat) e links para download.</p>
+         <p>3.2 Nossos e-mails com promoções têm como remetente o buscape@envios.buscape.com.br e são enviados uma vez por dia, de segunda à sábado. Nosso link para atendimento e dúvidas é Atendimento Buscapé.</p>
+         <p>3.3 Os links de nossos e-mails levam diretamente para o site do Buscapé ou para empresas parceiras.</p>
+         <p>3.4 Nunca forneça a senha de seu cadastro a terceiros e, no caso de uso não autorizado, acesse imediatamente o Buscapé e altere sua senha em "esqueci minha senha".</p>
+         <h3>4. Compartilhamento de Dados Pessoais</h3>
+         <p>4.1 O Buscapé pode compartilhar seus dados pessoais com empresas parceiras de negócio com o objetivo de fornecer a você as melhores ofertas de produtos e serviços, desenvolver e aprimorar sua experiência no Buscapé, inclusive para oferecer novos produtos e serviços ou em circunstâncias específicas como processos judiciais, investigações, ou advindas de lei, incluindo requisições de autoridades e órgãos governamentais.</p>
+         <p>4.2 O Buscapé não vende, troca ou aluga informações pessoais dos seus usuários. Nós podemos utilizar informações genéricas sobre o perfil dos nossos visitantes, sem expor nenhuma informação pessoal, resguardando assim, a identidade dos nossos usuários com os nossos parceiros comerciais.</p>
+         <h3>5. Segurança da Informação</h3>
+         <p>5.1 Tomamos medidas de segurança técnicas e organizacionais adequadas para protegermos seus dados pessoais contra acesso, alteração, divulgação ou ainda destruição não autorizada dos dados. Essas medidas incluem análises internas de nossas práticas de coleta, armazenamento e processamento de dados e medidas de segurança, incluindo criptografia e medidas de segurança física apropriadas para nos proteger contra o acesso não autorizado a sistemas em que armazenamos os dados pessoais.</p>
+         <p>5.2 Nosso site utiliza uma tecnologia avançada de segurança. Todo o tráfego de dados é feito com as informações criptografadas, que é um método padrão usado na Internet para proteger as comunicações entre os usuários da Web e os sites, fornecendo uma navegação segura.</p>
+         <p>5.3 Limitamos o acesso às informações pessoais aos funcionários, contratantes e agentes do Buscapé que precisam ter conhecimento dessas informações para processá-las em nosso nome. Essas pessoas estão comprometidas com obrigações de confidencialidade e podem ser submetidas a punições, incluindo rescisão de contrato e processo criminal, caso não cumpram essas obrigações. O Buscapé não cadastra nenhum usuário sem sua devida permissão. </p>
+         <h3>6. Retenção e Término de Dados Pessoais</h3>
+         <p>6.1 O Buscapé armazena seus dados pessoais pelo tempo exigido por lei ou pelo tempo que for necessário para preservar o legítimo interesse do Buscapé. Dessa forma, trataremos seus dados, por exemplo, durante os prazos prescricionais aplicáveis ou enquanto necessário para cumprimento de uma obrigação legal ou regulatória.</p>
+         <p>6.2 O término do tratamento de dados pessoais poderá ocorrer quando o Titular exercer seu direito de solicitar o fim do tratamento e a exclusão de seus dados pessoais ou quando houver determinação legal neste sentido.</p>
+         <h3>7. Direitos dos Titulares dos Dados Pessoais</h3>
+         <p>7.1 A lei de proteção de dados prevê aos Titulares direitos em relação aos seus dados pessoais, quais sejam:</p>
+         <ol type="a">
+            <li>Solicitar o acesso aos dados pessoais e a confirmação da existência de tratamento de dados pessoais;</li>
+            <li>Solicitar a correção de dados incompletos, inexatos ou desatualizados;</li>
+            <li>Solicitar a portabilidade dos dados pessoais a outro fornecedor de serviço ou produto;</li>
+            <li>Solicitar a anonimização ou eliminação dos dados pessoais, em circunstâncias específicas;</li>
+            <li>Se opor as atividades de tratamento de seus dados pessoais e revogar o consentimento, quando o Buscapé tratar seus dados pessoais com base no consentimento.</li>
+         </ol>
+         <p>7.2 O consentimento pode ser revogado a qualquer momento pelo Titular dos dados para:</p>
+         <ol type="i">
+            <li>Deixar de receber alertas: em "Sua conta" desmarcando a opção "ALERTAS DE PREÇO".</li>
+            <li>Deixar de receber novidades e promoções: em "Sua conta" desmarcando a opção "NOVIDADES E PROMOÇÕES".</li>
+            <li>Deixar de receber e-mails: clicando na seguinte frase: "Para não receber mais nossos e-mails, acesse o link." que se localiza no início e no rodapé de todos os e-mails enviados. Se tiver algum problema ao se descadastrar, entre em contato através do link do atendimento.</li>
+         </ol>
+         <h3>8. Disposições Gerais</h3>
+         <p>8.1 Esta Política de Privacidade pode ser alterada periodicamente. Publicaremos todas as alterações da Política de Privacidade no site e no aplicativo do Buscapé. Se as alterações forem significativas, colocaremos um aviso com mais destaque, incluindo, para alguns serviços, notificação por e-mail das alterações da Política de Privacidade. </p>
+         <p>8.2 Se você tiver qualquer dúvida em relação a esta Política de Privacidade ou a respeito da forma como o Buscapé trata seus dados pessoais, entre em contato pelo e-mail <a href="mailto:dpo@buscape.com.br">dpo@buscape.com.br</a></p>
+      </main>
+   </body>
 </html>
