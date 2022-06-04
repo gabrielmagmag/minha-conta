@@ -31,10 +31,10 @@
       }
 
       nav {
+        background-color: #FFC500;
+        padding: 0 0 0 1.66em;
         display: grid;
         grid-template-columns: auto auto;
-        padding: 0.66em 1.66em;
-        background-color: #FFC500;
         justify-content: space-between;
       }
 
@@ -112,19 +112,32 @@
       }
 
       details {
-        font-size: 1.2em;
+        font-size: 1.26em;
         margin: auto;
       }
 
       summary {
-        padding: 1em;
-        border-radius: 9px;
-        border: 1px solid black;
-      }
+        border-left: 1px solid black;
+        padding: 0.608em 1.26em;
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap:0.5em;
+       height: 4.5vh;
+       }
+       
+       summary span{
+       margin: auto;}
+       
 
       summary:hover {
         background-color: rgba(0, 0, 0, 0.1);
         cursor: pointer;
+      }
+      
+      .username
+      {
+        width:30px;
+        height:30px; 
       }
 
       .overlay {
@@ -186,8 +199,16 @@
       margin: auto;
       border: none;
       border-top:1px solid #ccc;
-
-}      
+      }
+      
+      .saldo,.alertas{
+        font-size:0.8em;
+      }
+      .nome{font-weight:bold;}
+            
+      summary::-webkit-details-marker {
+        margin: auto;
+     }       
       @media (prefers-color-scheme: dark) {
       body{background-color: #1F1F1F;}
       main{
@@ -233,7 +254,10 @@
       <input type="text" placeholder="Digite sua busca…">
       <details>
         <summary>
-          <span>Gabriel</span>
+            <img class="username" src="assets/gabriel.png" />
+            <span class="nome">Gabriel</span>
+            <span class="saldo">R$ 30,00</span>
+            <span class="alertas">2 alertas</span>
           <span class="overlay"></span>
         </summary>
         <div class="overlay-modal">
