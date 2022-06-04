@@ -157,7 +157,7 @@
 
       .overlay-modal {
         background-color: #fcfcfc;
-        padding: 1.26em 2.177em;
+        padding: 1.26em;
         height: auto;
         min-width: 200px;
         position: absolute;
@@ -180,6 +180,38 @@
         text-transform: uppercase;
         margin-bottom: 3.135em;
       }
+      hr{
+      width: 100%;
+      margin: auto;
+      border: none;
+      border-top:1px solid #ccc;
+
+}      
+      @media (prefers-color-scheme: dark) {
+      
+      main{
+        background-color: #1F1F1F;
+        color: rgba(255,255,255,0.5);
+      }
+      main>svg{
+        fill: #FFFFFF;
+      }
+
+      
+        .overlay-modal {
+        background-color: #2f2f2f;
+        color: rgba(255,255,255,0.5);
+        border: 1px solid rgba(0,0,0,0.9);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        text-align: center;
+      }
+      hr{
+      border-top:1px solid black;
+      } 
+      #Vector,#Vector2{
+        fill: white;
+      }
+      }
     </style>
   </head>
   <body>
@@ -198,7 +230,7 @@
         </svg>
       </a>
       <input type="text" placeholder="Digite sua busca…">
-      <details>
+      <details open>
         <summary>
           <span>Gabriel</span>
           <span class="overlay"></span>
