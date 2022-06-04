@@ -77,7 +77,7 @@
       }
       main {
         margin: auto;
-        padding: 2.613em;
+        padding: 19.413em 2.613em;
         background-color: white;
         column-width: 35ch;
         column-gap: 2.177em;
@@ -133,23 +133,35 @@
       details[open] summary:hover {
         cursor: default;
       }
+      
+      details img{
+        width: 60px;
+        height: 60px;
+        clip-path: circle(50%);
+        margin:auto;
+      }
 
       .overlay-modal {
         background-color: #fcfcfc;
-        padding: 1em;
+        padding: 1.26em 2.177em;
         height: auto;
         min-width: 200px;
         position: absolute;
-        right: 1em;
-        top: 70px;
-        border-radius: 9px;
+        right: 1.26em;
+        top: 3.762em;
+        border-radius: 13px;
         border: 1px solid #ddd;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
       }
+       
 
       .overlay-modal ul {
         list-style: none;
         padding: 0;
+ 
+        display: grid;
+        grid-gap: 0.506em;
       }
 
       
@@ -176,21 +188,25 @@
         </svg>
       </a>
       <input type="text" placeholder="Digite sua busca…">
-      <details>
+      <details open>
         <summary>
           <span>Gabriel</span>
           <span class="overlay"></span>
         </summary>
         <div class="overlay-modal">
           <ul>
+            <li><img src="assets/gabriel.png" alt="Gabriel Rodrigues" /></li>
+            <li><strong>Gabriel Rodrigues</strong></li>
             <li>gabriel.rodrigues@mosaico.com.br</li>
-            <li>CEP: 27258-060</li>
-            <li>Saldo da Carteira: R$ 30,00</li>
-            <li>Meus Pedidos</li>
-            <li>Alertas de Preço</li>
+            <li>(21) 99730-5545</li>
+            <li>CEP 27258-060</li>
+            <hr />
+            <li>R$ 30,00</li>
+            <li>Pedidos Buscapé</li>
             <li>Produtos Salvos</li>
-            <li>Produtos Vistos</li>
-            <li>Sair da conta</li>
+            <hr />
+            <li>Preferências</li>
+            <li>Sair</li>
           </ul>
         </div>
       </details>
