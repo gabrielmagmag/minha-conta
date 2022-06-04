@@ -117,16 +117,19 @@
       }
 
       summary {
-        border-left: 1px solid black;
-        padding: 0.608em 1.26em;
-        display: grid;
-        grid-auto-flow: column;
-        grid-gap:0.5em;
-       height: 4.5vh;
+        border-left: 1px solid rgba(0,0,0,0.25);
+        padding: 0.608em;
+        display: grid;        
+        grid-template-areas:
+        'seta img nome nome'
+        'seta img saldo alertas';
+        column-gap:0.5em;
        }
        
-       summary span{
-       margin: auto;}
+       .saldo{grid-area:saldo;}
+       .alertas{grid-area:alertas;}
+       .nome{grid-area:nome;}
+       summary img{grid-area:img;}
        
 
       summary:hover {
@@ -200,7 +203,7 @@
       border: none;
       border-top:1px solid #ccc;
       }
-      
+       
       .saldo,.alertas{
         font-size:0.8em;
       }
@@ -208,6 +211,7 @@
             
       summary::-webkit-details-marker {
         margin: auto;
+        grid-area: seta;
      }       
       @media (prefers-color-scheme: dark) {
       body{background-color: #1F1F1F;}
