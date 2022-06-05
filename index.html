@@ -134,7 +134,11 @@
 
       summary:hover {
         background-color: rgba(0, 0, 0, 0.1);
-        cursor: pointer;
+        cursor: pointer; 
+      }
+      
+      
+      summary:hover span{
       }
       
       .username
@@ -174,11 +178,11 @@
 
       .overlay-modal {
         background-color: #fcfcfc;
+        font-size: 1em;
         padding: 1.26em;
         height: auto;
-        min-width: 200px;
         position: absolute;
-        right: 1.26em;
+        right: 3vw;
         top: 3.762em;
         border-radius: 13px;
         border: 1px solid #ddd;
@@ -214,21 +218,36 @@
         grid-area: seta;
      } 
      
+     aside{
+      background-color: white; 
+      display: grid;
+      padding: 2.613em;
+     }
+     aside fieldset
+     {
+     display: grid;
+      padding: 2em;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.2);
+     }
+     aside fieldset legend {font-weight: 500; padding:0.6em; font-size:1.26em;}
+     aside fieldset input{margin-right:0.66em;}
            
       @media (prefers-color-scheme: dark) {
       body{background-color: #1F1F1F;}
-      main{
+      main,aside{
         background-color: #1F1F1F;
         color: rgba(255,255,255,0.5);
       }
+      aside fieldset{border: 1px solid rgba(255,255,255,0.2);}
       main>svg{
         fill: #FFFFFF;
       }
 
       
         .overlay-modal {
-        background-color: #2f2f2f;
-        color: rgba(255,255,255,0.5);
+        background-color: #303030;
+        color: rgba(255,255,255,0.6);
         border: 1px solid rgba(0,0,0,0.9);
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
         text-align: center;
@@ -244,6 +263,8 @@
       
     </style>
   </head>
+  
+  
   <body>
     <nav>
       <a href="index.html">
@@ -262,8 +283,8 @@
       <input type="text" placeholder="Digite sua busca…">
       <details>
         <summary>
-            <img class="username" src="assets/gabriel.png" />
-            <span class="nome">Gabriel</span>
+            <img class="username" src="assets/gabriel.png" alt="Usuário Autenticado"/>
+            <span class="nome">Gabriel Rodrig.</span>
             <span class="saldo">R$ 30,00</span>
             <span class="alertas">2 alertas</span>
           <span class="overlay"></span>
@@ -274,22 +295,37 @@
               <img src="assets/gabriel.png" alt="Gabriel Rodrigues" />
             </li>
             <li>
-              <strong>Gabriel Rodrigues</strong>
+              <strong>gabriel@buscape.com.br</strong>
             </li>
-            <li>gabriel.rodrigues@mosaico.com.br</li>
             <li>(21) 99730-5545</li>
             <li>CEP 27258-060</li>
-            <hr />
             <li>R$ 30,00</li>
             <li>Pedidos Buscapé</li>
             <li>Produtos Salvos</li>
-            <hr />
             <li>Preferências</li>
             <li>Sair</li>
           </ul>
         </div>
       </details>
     </nav>
+    
+    <aside>
+
+    <form>
+  <fieldset>
+    <legend>Tipos de usuário</legend>
+
+  <label><input type="radio" name="userstatus" checked="checked">Convidado</label>
+  <label><input type="radio" name="userstatus">Autenticado com telefone</label>
+  <label><input type="radio" name="userstatus">Autenticado com email</label>
+  <label><input type="radio" name="userstatus">Autenticado com Google</label>
+  <label><input type="radio" name="userstatus">Autenticado com Facebook</label>
+  <label><input type="radio" name="userstatus">Verificado</label>
+  <label><input type="radio" name="userstatus">Assinante</label>
+        </fieldset>
+      </form>
+</aside>
+    
     <main>
       <svg width="44px" height="44px" viewBox="0 0 44 44">
         <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -298,6 +334,8 @@
               <path d="M0,0 L44,0 L44,44 L0,44 L0,0 Z" id="Frame-19796"></path>
               <path d="M16.2841261,19.2047738 L18.4250284,9.14076203 C18.9883588,6.49325298 16.96765,4 14.2589749,4 C11.906685,4 10,5.9054519 10,8.25591618 L10,28.217476 C10,34.9059784 15.4263582,40.328125 22.1196853,40.328125 C28.8098042,40.328125 34.2336944,34.9116498 34.2394943,28.2282033 C34.2336944,21.5651021 29.6854662,16.1073201 23.2016756,16.1073201 C20.2359541,16.1073201 17.863549,17.2813193 16.2841261,19.2047738 Z M16.0600278,28.217476 C16.0600278,24.8732866 18.7728985,22.1622744 22.1200556,22.1622744 C25.4667192,22.1622744 28.1799609,24.8732866 28.1799609,28.217476 C28.1799609,31.5617886 25.4667192,34.2727997 22.1200556,34.2727997 C18.7728985,34.2727997 16.0600278,31.5617886 16.0600278,28.217476 Z" id="Vector" fill="#000000"></path>
               <path d="M24.0855484,13.0731258 C22.9997333,13.0731258 22.1196289,12.1937052 22.1196289,11.1088561 C22.1196289,10.1813458 22.7687238,9.38034795 23.6765931,9.18749684 L33.4989068,7.10127706 C35.3783208,6.70213446 37.1484013,8.13433741 37.1484013,10.054217 C37.1484013,11.721442 35.7957912,13.0731258 34.1272715,13.0731258 L24.0855484,13.0731258 Z" id="Vector2" fill-opacity="0.550000012" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+            </g>
             </g>
       </svg>
       <h1>Política de Privacidade</h1>
