@@ -11,6 +11,7 @@
         src: url('buscape.woff2') format('woff2');
         font-weight: 1 999;
       }
+      *{box-sizing:border-box;}
 
       body {
         font-family: buscape, sans-serif;
@@ -36,6 +37,9 @@
         display: grid;
         grid-template-columns: auto auto;
         justify-content: space-between;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0px;
       }
 
       nav input {
@@ -124,6 +128,9 @@
         'seta img nome nome'
         'seta img saldo alertas';
         column-gap:0.5em;
+        user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
        }
        
        .saldo{grid-area:saldo;}
